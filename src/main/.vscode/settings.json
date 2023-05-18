@@ -1,0 +1,12 @@
+{
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "e:\\apache-tomcat-8.5.87-windows-x64\\apache-tomcat-8.5.87\\lib\\servlet-api.jar",
+    "c:\\Users\\arunm\\Downloads\\jackson-databind-2.14.0.jar",
+    "c:\\Users\\arunm\\Downloads\\jackson-core-2.14.0.jar",
+    "c:\\Users\\arunm\\Downloads\\jackson-annotations-2.14.0.jar",
+    "c:\\Users\\arunm\\Downloads\\jackson-datatype-jsr310-2.15.0-javadoc.jar",
+    "c:\\Users\\arunm\\Downloads\\jackson-datatype-jsr310-2.14.2.jar"
+  ],
+  "git.ignoreLimitWarning": true
+}
