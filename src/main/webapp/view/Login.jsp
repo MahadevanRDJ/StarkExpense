@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="ISO-8859-1" />
-    <title>Expense Tracker</title>
+    <title>Stark</title>
     <link
       rel="stylesheet"
       href="${pageContext.request.servletContext.contextPath}/css/login.css"
@@ -22,15 +22,8 @@
             class="login-attr login-username"
             name="name"
             placeholder="Username"
-            onmouseout="checkUserName()"
+            onkeyup="checkUserName()"
             required
-          />
-          <img
-            class="invalid iv_username"
-            src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-            height="15px"
-            width="15px"
-            style="display: none"
           />
         </div>
         <div class="login-fields">
@@ -39,15 +32,8 @@
             name="password"
             class="login-attr login-password"
             placeholder="Password"
-            onmouseout="checkPassWord()"
+            onkeyup="checkPassWord()"
             required
-          />
-          <img
-            class="invalid iv_password"
-            src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-            height="15px"
-            width="15px"
-            style="display: none"
           />
         </div>
         <div class="login-fields">

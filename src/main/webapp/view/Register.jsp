@@ -13,34 +13,22 @@
 		<div class="register-fields">
 			<input type="text" name="firstname"
 				class="register-attr register-firstname" placeholder="Firstname"
-				onmouseout="checkFirstName()" required /> <img
-				class="invalid iv_firstname"
-				src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-				height="15px" width="15px" style="display: none" />
+				onkeyup="checkFirstName()" required />
 		</div>
 		<div class="register-fields">
 			<input type="text" name="lastname"
 				class="register-attr register-lastname" placeholder="Lastname"
-				onmouseout="checkLastName()" required /> <img
-				class="invalid iv_lastname"
-				src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-				height="15px" width="15px" style="display: none" />
+				onkeyup="checkLastName()" required />
 		</div>
 		<div class="register-fields">
 			<input type="text" name="username"
 				class="register-attr register-username" placeholder="Username"
-				onmouseout="checkUserName()" required /> <img
-				class="invalid iv_username"
-				src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-				height="15px" width="15px" style="display: none" />
+				onkeyup="checkUserName()" required />
 		</div>
 		<div class="register-fields">
 			<input type="password" name="password"
 				class="register-attr register-password" placeholder="Password"
-				onmouseout="checkPassword()" required /> <img
-				class="invalid iv_password"
-				src="${pageContext.request.servletContext.contextPath}/view/cross.png"
-				height="15px" width="15px" style="display: none" />
+				onkeyup="checkPassWord()" required />
 		</div>
 		<div class="register-fields">
 			<button type="submit" class="register-btn" onclick="register()">Register</button>

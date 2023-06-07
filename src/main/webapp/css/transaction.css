@@ -295,7 +295,7 @@ img {
 .category-fields {
 	border-radius: 8px;
 	padding: 13px;
-	background: linear-gradient(225deg, rgb(255 220 220), rgb(233, 250, 255));
+	background: linear-gradient(225deg, rgb(247 134 134), rgb(233, 250, 255));
 	outline: none;
 	width: 100%;
 }
@@ -304,6 +304,9 @@ input[type="number"] {
 	padding: 11px;
 	border-radius: 5px;
 	background: linear-gradient(225deg, rgb(161 233 203), rgb(255, 255, 255));
+	font-size:large;
+	border: 3px transparent solid;
+	border-image: linear-gradient(0deg, transparent, #1c775a, transparent) 9;
 }
 
 .amount {
@@ -325,6 +328,11 @@ input[type="number"] {
 .transaction-history {
 	height: auto;
 }
+select {
+	font-size:large;
+	border: 3px transparent solid;
+	border-image: linear-gradient(0deg, transparent, #f27990, transparent) 9;
+}
 
 .transaction-history-content {
 	height: 50px;
@@ -344,22 +352,22 @@ input[type="number"] {
 }
 
 html::-webkit-scrollbar {
-	width: 3px;
+	width: 5px;
 	border-radius: 0 5px 5px 0;
 }
 
 /* Track */
 html::-webkit-scrollbar-track {
-	background: rgb(255 255 255/ 10%);
+	background: rgb(57 56 56);
 }
 
 html::-webkit-scrollbar-thumb {
-	background: #888;
+	background: #877ddb;
 }
 
 /* Handle on hover */
 html::-webkit-scrollbar-thumb:hover {
-	background: #555;
+	background: #4469e1;
 }
 
 .red {

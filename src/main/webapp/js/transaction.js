@@ -11,7 +11,7 @@ const TRANSACTIONHISTORY = document.querySelector(".transaction-history");
 const PROFILEDP = document.querySelector(".profile-dp");
 const FIRSTNAME = document.querySelector(".first-name");
 const LASTNAME = document.querySelector(".last-name");
-const USERNAME = document.querySelector(".user-name"); 
+const USERNAME = document.querySelector(".user-name");
 const SAVE = document.querySelector(".save-btn");
 var categoryName;
 var type;
@@ -47,7 +47,16 @@ function goToTransaction() {
   WALLET.style = "display : none";
   CATEGORY.addEventListener("click", selectCategory);
 }
-
+CATEGORY.addEventListener("click", () => {
+  if (CATEGORY.value.length == 0) {
+    DEBTS.style.display = "none";
+    INCOME.style.display = "none";
+    EXPENSES.style.display = "none";
+    AMOUNT.style.display = "none";
+    ADDTRANSACTION.style.display = "none";
+  }
+});
+undefined;
 function selectCategory() {
   categoryName = CATEGORY.value.toUpperCase();
   if (categoryName == "EXPENSES") displayExpenses();
@@ -94,7 +103,10 @@ function displayIncome() {
   });
 }
 function displayAmount(element) {
-  if (element !== "") AMOUNT.style = "display: flex";
+  if (element !== "") {
+    AMOUNT.style = "display: flex";
+    ADDTRANSACTION.style = "display: flex";
+  }
 }
 
 ADDTRANSACTION.addEventListener("click", () => {
@@ -176,9 +188,9 @@ function getUserProfile() {
   TRANSACTION.style = "display : none";
   TRANSACTIONHISTORY.style = "display : none";
   const xhttp = new XMLHttpRequest();
-  xhttp.open("GET", "/ExpenseTracker/userprofile", true)
+  xhttp.open("GET", "/ExpenseTracker/userprofile", true);
   xhttp.onreadystatechange = function () {
-    if(this.readyState == 4 && this.status == 200) {
+    if (this.readyState == 4 && this.status == 200) {
       var user = JSON.parse(this.response);
       console.log(user);
       PROFILEDP.innerHTML = user.userName.charAt(0).toUpperCase();
@@ -186,7 +198,7 @@ function getUserProfile() {
       LASTNAME.innerHTML = user.userLastName;
       USERNAME.innerHTML = user.userName;
     }
-  }
+  };
   xhttp.send();
 }
 USERNAME.addEventListener("click", () => {
@@ -194,7 +206,7 @@ USERNAME.addEventListener("click", () => {
   FIRSTNAME.contentEditable = false;
   LASTNAME.contentEditable = false;
   SAVE.disabled = false;
-})
+});
 FIRSTNAME.addEventListener("click", () => {
   FIRSTNAME.contentEditable = true;
   USERNAME.contentEditable = false;
@@ -211,22 +223,22 @@ SAVE.addEventListener("click", () => {
   const xhttp = new XMLHttpRequest();
   console.log("To update");
   var data = {
-    username : USERNAME.innerText,
-    firstname : FIRSTNAME.innerText,
-    lastname : LASTNAME.innerText
-  }
+    username: USERNAME.innerText,
+    firstname: FIRSTNAME.innerText,
+    lastname: LASTNAME.innerText,
+  };
   xhttp.open("PUT", "/ExpenseTracker/register", true);
   xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.onreadystatechange = function() {
+  xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       alert(this.responseText);
     }
-  }
+  };
   xhttp.send(JSON.stringify(data));
-} )
+});
 document.querySelector(".side-nav").addEventListener("click", () => {
   USERNAME.contentEditable = false;
   FIRSTNAME.contentEditable = false;
   LASTNAME.contentEditable = false;
   SAVE.disabled = true;
-})
+});

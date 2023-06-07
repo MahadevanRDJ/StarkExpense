@@ -2,7 +2,7 @@ package com.expensetracker.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
+  
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -45,6 +45,7 @@ public class LoginServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if (user != null) {
 			session.setAttribute("name", name);
+			session.setMaxInactiveInterval(0);
 			Cookie userCookie = new Cookie("userName", name);
 			userCookie.setMaxAge(24 * 3600);
 			response.addCookie(userCookie);
