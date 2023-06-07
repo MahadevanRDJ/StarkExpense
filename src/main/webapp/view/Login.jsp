@@ -14,7 +14,6 @@
     />
   </head>
   <body>
-    <!-- <form action="login" method="post"> -->
       <div class="login">
         <div class="login-fields">
           <input
@@ -44,7 +43,6 @@
           <a href="register" class="register_link"> Sign up</a>
         </div>
       </div>
-    <!-- </form> -->
     <script src="${pageContext.request.servletContext.contextPath}/js/login.js"></script>
   </body>
 </html>
