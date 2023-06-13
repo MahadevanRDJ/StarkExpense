@@ -36,6 +36,8 @@ function login() {
       PASSWORD.value = "";
       if (this.responseText.trim() == "Failure")
         alert("Invalid Username/Passowrd");
+      if (this.responseText.trim() == "Wallet") 
+        window.location.href = "/ExpenseTracker/wallet";
       else window.location.href = "/ExpenseTracker/home";
     }
   };

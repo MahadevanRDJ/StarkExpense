@@ -29,8 +29,6 @@ public class RegistrationServlet extends HttpServlet {
 			doGet(request, response);
 		} else if (request.getMethod().equalsIgnoreCase("post")) {
 			doPost(request, response);
-		} else {
-			doPut(request, response);
 		}
 	}
 
@@ -62,23 +60,4 @@ public class RegistrationServlet extends HttpServlet {
 		}
 	}
 
-	protected void doPut(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		String userName = request.getParameter("username");
-		String lastName = request.getParameter("lastname");
-		String firstName = request.getParameter("firstname");
-		System.out.println(userName+ lastName+ firstName);
-		PrintWriter out = response.getWriter();  
-		if (validate(lastName, firstName, userName) ) {
-			if (DBUtils.updateUser(userName, lastName, firstName)) {
-				out.println("Profile Updated successfully");
-			}
-		} else {
-			out.println("Error occured while updating.");
-		}
-	}
-
-	private boolean validate(String lastName, String firstName, String userName) {
-		return userName != null && firstName !=null && lastName != null;
-	}
 }

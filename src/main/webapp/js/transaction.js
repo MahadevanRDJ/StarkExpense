@@ -192,7 +192,6 @@ function getUserProfile() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       var user = JSON.parse(this.response);
-      console.log(user);
       PROFILEDP.innerHTML = user.userName.charAt(0).toUpperCase();
       FIRSTNAME.innerHTML = user.userFirstName;
       LASTNAME.innerHTML = user.userLastName;
@@ -221,20 +220,14 @@ LASTNAME.addEventListener("click", () => {
 });
 SAVE.addEventListener("click", () => {
   const xhttp = new XMLHttpRequest();
-  console.log("To update");
-  var data = {
-    username: USERNAME.innerText,
-    firstname: FIRSTNAME.innerText,
-    lastname: LASTNAME.innerText,
-  };
-  xhttp.open("PUT", "/ExpenseTracker/register", true);
-  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.open("POST", "/ExpenseTracker/updateprofile", true);
+  xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       alert(this.responseText);
     }
   };
-  xhttp.send(JSON.stringify(data));
+  xhttp.send(`username=${USERNAME.innerText}&firstname=${FIRSTNAME.innerText}&lastname=${LASTNAME.innerText}`);
 });
 document.querySelector(".side-nav").addEventListener("click", () => {
   USERNAME.contentEditable = false;

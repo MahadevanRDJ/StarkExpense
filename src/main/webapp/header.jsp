@@ -8,10 +8,9 @@ pageEncoding="ISO-8859-1"%>
   </head>
   <body>
     <header class="header">
-      <a href="index.jsp" class="logo"> <span>STARK</span>EXPENSE </a>
+      <a href="${pageContext.request.servletContext.contextPath}/" class="logo"> <span>STARK</span>EXPENSE </a>
 
       <nav class="navbar">
-        <a class="header-link" href="${pageContext.request.servletContext.contextPath}/">Home</a>
         <a class="header-link" href="${pageContext.request.servletContext.contextPath}/login">Login</a>
         <a class="header-link" href="${pageContext.request.servletContext.contextPath}/register">Register</a>
       </nav>

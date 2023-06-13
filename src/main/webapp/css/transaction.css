@@ -385,10 +385,15 @@ html::-webkit-scrollbar-thumb:hover {
 	font-size: large;
 }
 
-.red .transaction-amount {
-	color: #f60d0d;
+.red .transaction-amount, .green .transaction-amount  {
+	color: #ffffff;
 }
 
-.green .transaction-amount {
-	color: green;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+::placeholder {
+	text-align:center;	
 }

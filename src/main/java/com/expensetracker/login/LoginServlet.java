@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.expensetracker.model.User;
-import com.expensetracker.model.Wallet;
 import com.expensetracker.util.DBUtils;
 
 @WebServlet("/login")
@@ -49,12 +48,8 @@ public class LoginServlet extends HttpServlet {
 			Cookie userCookie = new Cookie("userName", name);
 			userCookie.setMaxAge(24 * 3600);
 			response.addCookie(userCookie);
-			if (!user.isWalletInitialized()) {
-				response.sendRedirect(request.getContextPath() + "/wallet");
-			} else {
-				Wallet wallet = DBUtils.getWallet();
-				session.setAttribute("wallet", wallet);
-			}
+			if (!user.isWalletInitialized()) 
+				out.println("Wallet");
 		} else {
 			out.println("Failure");
 		}

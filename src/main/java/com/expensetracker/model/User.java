@@ -10,9 +10,9 @@ public class User {
     private String userName;
     private String password;
     private boolean isWalletInitialized;
-    public User() {
-        
+    public User() {   
     }
+    
     public User(ResultSet resultSet) throws SQLException {
         this.user_id = resultSet.getInt(1);
         this.userFirstName = resultSet.getString(2);
